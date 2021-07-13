@@ -32,6 +32,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="1ec-Kz-hge"/>
                     <connections>
+                        <outlet property="thumbnailsTableView" destination="OwD-pV-FqB" id="3yR-j3-52h"/>
                         <segue destination="j5l-NV-gYR" kind="show" identifier="showVideoViewController" id="L5f-D1-ZK2"/>
                     </connections>
                 </viewController>
