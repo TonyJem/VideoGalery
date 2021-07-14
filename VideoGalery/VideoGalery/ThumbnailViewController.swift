@@ -8,6 +8,9 @@ final class ThumbnailViewController: UIViewController {
         
         title = "Funny videos"
         
+        thumbnailsTableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
+                                  forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
+        
         thumbnailsTableView.backgroundColor = .systemGray5
         thumbnailsTableView.tableFooterView = UIView()
         thumbnailsTableView.dataSource = self
@@ -22,7 +25,12 @@ extension ThumbnailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        
+        guard let cell = thumbnailsTableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        return cell
     }
     
 }
