@@ -29,10 +29,9 @@ extension ThumbnailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = thumbnailsTableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
-            
             return UITableViewCell()
         }
-        
+        cell.fillCell(with: showImage(videoThumbnailNames[indexPath.row]))
         return cell
     }
     
@@ -45,7 +44,7 @@ extension ThumbnailViewController: UITableViewDelegate {
 // MARK: - Private Methods
 private extension ThumbnailViewController {
     
-    func showImage(with name: String) -> UIImage {
+    func showImage(_ name: String) -> UIImage {
         return #imageLiteral(resourceName: name)
     }
 }

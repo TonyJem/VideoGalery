@@ -1,7 +1,8 @@
 import UIKit
 
 class ThumbnailTableViewCell: UITableViewCell {
-
+    @IBOutlet private weak var thunmbnailImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -13,4 +14,7 @@ class ThumbnailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func fillCell(with image: UIImage) {
+        thunmbnailImageView.image = image
+    }
 }
