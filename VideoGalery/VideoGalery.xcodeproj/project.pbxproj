@@ -15,6 +15,7 @@
 		3A242B17269E180A00DD5431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A242B15269E180A00DD5431 /* LaunchScreen.storyboard */; };
 		3A242B21269E1D6E00DD5431 /* ThumbnailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A242B1F269E1D6E00DD5431 /* ThumbnailTableViewCell.swift */; };
 		3A242B22269E1D6E00DD5431 /* ThumbnailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A242B20269E1D6E00DD5431 /* ThumbnailTableViewCell.xib */; };
+		3A242B2626A0BDC500DD5431 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A242B2526A0BDC500DD5431 /* Video.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3A242B18269E180B00DD5431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A242B1F269E1D6E00DD5431 /* ThumbnailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTableViewCell.swift; sourceTree = "<group>"; };
 		3A242B20269E1D6E00DD5431 /* ThumbnailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailTableViewCell.xib; sourceTree = "<group>"; };
+		3A242B2526A0BDC500DD5431 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				3A242B0C269E180900DD5431 /* SceneDelegate.swift */,
 				3A242B0E269E180900DD5431 /* ThumbnailViewController.swift */,
 				3A242B10269E180900DD5431 /* Main.storyboard */,
+				3A242B2526A0BDC500DD5431 /* Video.swift */,
 				3A242B1F269E1D6E00DD5431 /* ThumbnailTableViewCell.swift */,
 				3A242B20269E1D6E00DD5431 /* ThumbnailTableViewCell.xib */,
 				3A242B13269E180A00DD5431 /* Assets.xcassets */,
@@ -148,6 +151,7 @@
 				3A242B0B269E180900DD5431 /* AppDelegate.swift in Sources */,
 				3A242B21269E1D6E00DD5431 /* ThumbnailTableViewCell.swift in Sources */,
 				3A242B0D269E180900DD5431 /* SceneDelegate.swift in Sources */,
+				3A242B2626A0BDC500DD5431 /* Video.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

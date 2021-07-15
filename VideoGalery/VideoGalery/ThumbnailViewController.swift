@@ -1,17 +1,3 @@
-/*
- URL №1 "https://ia802609.us.archive.org/23/items/Aladdin_315/Aladdin_512kb.mp4"
- URL №2 "https://ia800604.us.archive.org/19/items/Avez-vousDjVu...LePlusPetitZooDuMonde/104_Le_Plus_Petit_Zoo_du_Monde.mp4"
- URL №3 "https://ia800705.us.archive.org/28/items/TheSpiritOf43_56/The_Spirit_of__43_512kb.mp4"
- URL №4 "https://ia800703.us.archive.org/30/items/Popeye_the_Sailor_Meets_Aladdin_and_His_Wonderful_Lamp/Popeye_-_Aladdin_and_His_Wonderful_Lamp_512kb.mp4
- */
-
-/*
- Title №1: "Aladdin"
- Title №2: "Avez Vous"
- Title №3: "The Kings Trumpet"
- Title №4: "Popeye the Sailor Meets Aladdin and His Wonderful Lamp"
- */
-
 
 import UIKit
 
