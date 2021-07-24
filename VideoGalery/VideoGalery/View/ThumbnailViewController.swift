@@ -4,7 +4,7 @@ import AVKit
 final class ThumbnailViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
-    lazy var videos: [Video] = {
+    private lazy var videos: [Video] = {
         return Video.fetchVideos()
     }()
   
@@ -16,7 +16,6 @@ final class ThumbnailViewController: UIViewController {
         
         tableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
                                   forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
-        
         tableView.backgroundColor = Colors.mainBackround
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
@@ -38,14 +37,12 @@ extension ThumbnailViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
             return UITableViewCell()
         }
         cell.fillCell(with: videos[indexPath.row].videoImage)
         return cell
     }
-    
 }
 
 // MARK: - TableView Delegate
