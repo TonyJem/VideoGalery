@@ -49,7 +49,7 @@ extension ThumbnailViewController: UITableViewDataSource {
 extension ThumbnailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedVideo = videos[indexPath.row]
-        let player = AVPlayer(url: selectedVideo.videoUrl)
+        let player = AVPlayer(url: selectedVideo.url)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
         playerViewController.allowsPictureInPicturePlayback = true

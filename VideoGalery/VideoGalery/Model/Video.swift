@@ -2,9 +2,9 @@ import UIKit
  
 struct Video {
  
-  let videoImage: UIImage!
-  let videoTitle: String!
-  let videoUrl: URL!
+  let image: UIImage!
+  let title: String!
+  let url: URL!
  
   private enum VideoTitle: String {
     case videoTitleOne = "Aladdin"
@@ -21,10 +21,10 @@ struct Video {
   }
  
   static func fetchVideos() -> [Video]{
-    let v1 = Video(videoImage:  #imageLiteral(resourceName: "video1"), videoTitle: VideoTitle.videoTitleOne.rawValue, videoUrl: URL(string: VideoUrl.videoOne.rawValue)!)
-    let v2 = Video(videoImage:  #imageLiteral(resourceName: "video2"), videoTitle: VideoTitle.videoTitleTwo.rawValue, videoUrl: URL(string: VideoUrl.videoTwo.rawValue)!)
-    let v3 = Video(videoImage:  #imageLiteral(resourceName: "video3"), videoTitle: VideoTitle.videoTitleThree.rawValue, videoUrl: URL(string: VideoUrl.videoThree.rawValue)!)
-    let v4 = Video(videoImage:  #imageLiteral(resourceName: "video4"), videoTitle: VideoTitle.videoTitleFour.rawValue, videoUrl: URL(string: VideoUrl.videoFour.rawValue)!)
+    let v1 = Video(image:  #imageLiteral(resourceName: "video1"), title: VideoTitle.videoTitleOne.rawValue, url: URL(string: VideoUrl.videoOne.rawValue)!)
+    let v2 = Video(image:  #imageLiteral(resourceName: "video2"), title: VideoTitle.videoTitleTwo.rawValue, url: URL(string: VideoUrl.videoTwo.rawValue)!)
+    let v3 = Video(image:  #imageLiteral(resourceName: "video3"), title: VideoTitle.videoTitleThree.rawValue, url: URL(string: VideoUrl.videoThree.rawValue)!)
+    let v4 = Video(image:  #imageLiteral(resourceName: "video4"), title: VideoTitle.videoTitleFour.rawValue, url: URL(string: VideoUrl.videoFour.rawValue)!)
  
     return [v1, v2, v3, v4]
   }
