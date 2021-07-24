@@ -53,9 +53,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WqV-An-SZS">
                                 <rect key="frame" x="144" y="0.0" width="136" height="40"/>
-                                <state key="normal" title="Random Thumbnail"/>
+                                <state key="normal" title="Generated Thumbnail"/>
                                 <connections>
-                                    <action selector="randomThumbnailButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pyh-AE-EUs"/>
+                                    <action selector="generatedThumbnailButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pyh-AE-EUs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -81,7 +81,7 @@
             <connections>
                 <outlet property="containerView" destination="ms9-Ko-TiT" id="53o-nE-EIU"/>
                 <outlet property="defaultThumbnailButton" destination="lQL-AE-uec" id="1AE-qY-Xg3"/>
-                <outlet property="randomThumbnailButton" destination="WqV-An-SZS" id="aiu-mf-Vdq"/>
+                <outlet property="generatedThumbnailButton" destination="WqV-An-SZS" id="aiu-mf-Vdq"/>
                 <outlet property="thumbnailImageView" destination="lCV-s7-ARi" id="9fr-OO-cQc"/>
                 <outlet property="titleLabel" destination="Qhc-Z7-d9E" id="XrV-tO-8JJ"/>
             </connections>

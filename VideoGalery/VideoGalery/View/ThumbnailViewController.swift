@@ -71,9 +71,10 @@ extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
         tableView.reloadData()
     }
     
-    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell) {
+    func onGeneratedThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        videos[indexPath.row].setRandomThumbnail()
+        videos[indexPath.row].setGeneratedThumbnail()
+        print("🟢 Generate Thumbnail from URL for cell: \(videos[indexPath.row].title) ...")
         
         // TODO: Reload only selected cell
         tableView.reloadData()

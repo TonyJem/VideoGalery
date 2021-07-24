@@ -8,10 +8,10 @@ struct Video {
     
     private let defaultImage: UIImage
     
-    private var randomThumbnail: UIImage? = nil
+    private var generatedThumbnail: UIImage? = nil
     
     var thumbnail: UIImage {
-        guard let thumbnail = randomThumbnail else {
+        guard let thumbnail = generatedThumbnail else {
             return defaultImage
         }
         return thumbnail
@@ -61,14 +61,12 @@ struct Video {
     
     // TODO: Avoid mutating
     mutating func setThumbnailToDefault() {
-        randomThumbnail = nil
+        generatedThumbnail = nil
     }
     
     // TODO: Avoid mutating
-    mutating func setRandomThumbnail() {
-        // TODO: Add generating random Thumbnail functionality
-        print("🟢 Start generating Thumbnail from URL")
-        randomThumbnail = getThumbnail(from: url)
+    mutating func setGeneratedThumbnail() {
+        generatedThumbnail = getThumbnail(from: url)
     }
     
     private func getThumbnail(from url: URL) -> UIImage {

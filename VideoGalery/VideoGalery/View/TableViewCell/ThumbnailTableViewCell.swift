@@ -2,7 +2,7 @@ import UIKit
 
 protocol ThumbnailTableViewCellDelegate {
     func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell)
-    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell)
+    func onGeneratedThumbnailButtonTap(cell: ThumbnailTableViewCell)
 }
 
 class ThumbnailTableViewCell: UITableViewCell {
@@ -10,7 +10,7 @@ class ThumbnailTableViewCell: UITableViewCell {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var thumbnailImageView: UIImageView!
     @IBOutlet private weak var defaultThumbnailButton: UIButton!
-    @IBOutlet private weak var randomThumbnailButton: UIButton!
+    @IBOutlet private weak var generatedThumbnailButton: UIButton!
     
     var delegate: ThumbnailTableViewCellDelegate?
     
@@ -23,15 +23,15 @@ class ThumbnailTableViewCell: UITableViewCell {
         containerView.layer.cornerRadius = containerCornerRadius
         
         defaultThumbnailButton.showsTouchWhenHighlighted = true
-        randomThumbnailButton.showsTouchWhenHighlighted = true
+        generatedThumbnailButton.showsTouchWhenHighlighted = true
     }
     
     @IBAction func defaultThumbnailButtonAction(_ sender: UIButton) {
         delegate?.onDefaultThumbnailButtonTap(cell: self)
     }
     
-    @IBAction func randomThumbnailButtonAction(_ sender: UIButton) {
-        delegate?.onRandomThumbnailButtonTap(cell: self)
+    @IBAction func generatedThumbnailButtonAction(_ sender: UIButton) {
+        delegate?.onGeneratedThumbnailButtonTap(cell: self)
     }
     
     func fillCell(with video: Video) {
