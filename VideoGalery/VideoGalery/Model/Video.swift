@@ -40,9 +40,9 @@ struct Video {
         case url08 = "https://ia601002.us.archive.org/17/items/PorkyInWackylandCCV/Porky%20in%20Wackyland%20%28CCV%29.mp4"
         case url09 = "https://ia800602.us.archive.org/33/items/ADayAtTheZoo1939/A%20Day%20at%20the%20Zoo%20%281939%29.mp4"
         case url10 = "https://ia800807.us.archive.org/32/items/TheMouseOfTomorrow1942/The%20Mouse%20of%20Tomorrow%20%281942%29.mp4"
-        
     }
     
+    // TODO: Avoid static
     static func fetchVideos() -> [Video] {
         let video01 = Video(title: Title.title01.rawValue, url: URL(string: Url.url01.rawValue)!, defaultImage: #imageLiteral(resourceName: "video01"))
         let video02 = Video(title: Title.title02.rawValue, url: URL(string: Url.url02.rawValue)!, defaultImage: #imageLiteral(resourceName: "video02"))
@@ -56,5 +56,17 @@ struct Video {
         let video10 = Video(title: Title.title10.rawValue, url: URL(string: Url.url10.rawValue)!, defaultImage: #imageLiteral(resourceName: "video10"))
         
         return [video01, video02, video03, video04, video05, video06, video07, video08, video09, video10]
+    }
+    
+    // TODO: Avoid mutating
+    mutating func setThumbnailToDefault() {
+        randomThumbnail = nil
+    }
+    
+    // TODO: Avoid mutating
+    mutating func setRandomThumbnail() {
+        
+        // TODO: Add generating random Thumbnail functionality
+        randomThumbnail = #imageLiteral(resourceName: "videoDefault")
     }
 }

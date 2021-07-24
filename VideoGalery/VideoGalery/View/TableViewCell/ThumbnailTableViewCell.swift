@@ -27,12 +27,10 @@ class ThumbnailTableViewCell: UITableViewCell {
     }
     
     @IBAction func defaultThumbnailButtonAction(_ sender: UIButton) {
-        print("🟢 defaultThumbnailButton Did Tap")
         delegate?.onDefaultThumbnailButtonTap(cell: self)
     }
     
     @IBAction func randomThumbnailButtonAction(_ sender: UIButton) {
-        print("🟢 randomThumbnailButton Did Tap")
         delegate?.onRandomThumbnailButtonTap(cell: self)
     }
     

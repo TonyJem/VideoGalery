@@ -7,7 +7,7 @@ final class ThumbnailViewController: UIViewController {
     private lazy var videos: [Video] = {
         return Video.fetchVideos()
     }()
-  
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -15,7 +15,7 @@ final class ThumbnailViewController: UIViewController {
         title = "Funny videos"
         
         tableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
-                                  forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
+                           forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
         tableView.backgroundColor = Colors.mainBackround
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
@@ -63,13 +63,19 @@ extension ThumbnailViewController: UITableViewDelegate {
 // MARK: - ThumbnailTableViewCell Delegate
 extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
     
-    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell) {
-        guard let indexPath = tableView.indexPath(for: cell) else { return }
-        print("🟢🟢 onRandomThumbnailButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
-    }
-    
     func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        print("🟢🟢 onDefaultThumbnailButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
+        videos[indexPath.row].setThumbnailToDefault()
+        
+        // TODO: Reload only selected cell
+        tableView.reloadData()
+    }
+    
+    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        videos[indexPath.row].setRandomThumbnail()
+        
+        // TODO: Reload only selected cell
+        tableView.reloadData()
     }
 }
