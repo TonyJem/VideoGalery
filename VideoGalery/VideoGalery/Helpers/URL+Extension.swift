@@ -13,7 +13,6 @@ extension URL {
             print("🔴 \(error)")
         }
         
-        // TODO: insert defaultImage Picture here and to assets
-        return #imageLiteral(resourceName: "video01")
+        return #imageLiteral(resourceName: "videoDefault")
     }
 }

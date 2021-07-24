@@ -20,7 +20,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ms9-Ko-TiT">
                         <rect key="frame" x="20" y="37" width="280" height="188"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video1" translatesAutoresizingMaskIntoConstraints="NO" id="lCV-s7-ARi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoDefault" translatesAutoresizingMaskIntoConstraints="NO" id="lCV-s7-ARi">
                                 <rect key="frame" x="0.0" y="0.0" width="280" height="188"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="188" id="2nK-hf-jcU"/>
@@ -62,7 +62,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="video1" width="1351" height="916"/>
+        <image name="videoDefault" width="640" height="480"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
