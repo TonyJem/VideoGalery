@@ -18,7 +18,7 @@ class ThumbnailTableViewCell: UITableViewCell {
         thumbnailImageView.image = video.image
         titleLabel.text = "\(video.title):"
         if video.title.isEmpty {
-            titleLabel.text = "Noname video"
+            titleLabel.text = "Noname video:"
         }
     }
 }
