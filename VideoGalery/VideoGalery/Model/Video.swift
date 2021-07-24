@@ -1,4 +1,5 @@
 import UIKit
+import AVFoundation
 
 struct Video {
     
@@ -65,8 +66,21 @@ struct Video {
     
     // TODO: Avoid mutating
     mutating func setRandomThumbnail() {
-        
         // TODO: Add generating random Thumbnail functionality
-        randomThumbnail = #imageLiteral(resourceName: "videoDefault")
+        print("🟢 Start generating Thumbnail from URL")
+        randomThumbnail = getThumbnail(from: url)
+    }
+    
+    private func getThumbnail(from url: URL) -> UIImage {
+        let asset: AVAsset = AVAsset(url: url)
+        let imageGenerator = AVAssetImageGenerator(asset: asset)
+        
+        do {
+            let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(value: 1, timescale: 60) , actualTime: nil)
+            return UIImage(cgImage: thumbnailImage)
+        } catch let error {
+            print("🔴 getThumbnail Error: \(error)")
+        }
+        return #imageLiteral(resourceName: "videoDefault")
     }
 }
