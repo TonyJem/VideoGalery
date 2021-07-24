@@ -40,6 +40,7 @@ extension ThumbnailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
             return UITableViewCell()
         }
+        cell.delegate = self
         cell.fillCell(with: videos[indexPath.row])
         return cell
     }
@@ -56,5 +57,13 @@ extension ThumbnailViewController: UITableViewDelegate {
         playerViewController.player?.play()
         
         present(playerViewController, animated: true, completion: nil)
+    }
+}
+
+// MARK: - ThumbnailTableViewCell Delegate
+extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
+    func onDefaultButtonTap(cell: ThumbnailTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        print("🟢🟢 onDefaultButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
     }
 }
