@@ -43,7 +43,6 @@ struct Video {
         case url10 = "https://ia800807.us.archive.org/32/items/TheMouseOfTomorrow1942/The%20Mouse%20of%20Tomorrow%20%281942%29.mp4"
     }
     
-    // TODO: Avoid static
     static func fetchVideos() -> [Video] {
         let video01 = Video(title: Title.title01.rawValue, url: URL(string: Url.url01.rawValue)!, defaultImage: #imageLiteral(resourceName: "video01"))
         let video02 = Video(title: Title.title02.rawValue, url: URL(string: Url.url02.rawValue)!, defaultImage: #imageLiteral(resourceName: "video02"))
@@ -59,12 +58,10 @@ struct Video {
         return [video01, video02, video03, video04, video05, video06, video07, video08, video09, video10]
     }
     
-    // TODO: Avoid mutating
     mutating func setThumbnailToDefault() {
         generatedThumbnail = nil
     }
     
-    // TODO: Avoid mutating
     mutating func setGeneratedThumbnail() {
         generatedThumbnail = getThumbnail(from: url)
     }
