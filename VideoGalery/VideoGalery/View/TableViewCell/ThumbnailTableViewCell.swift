@@ -1,7 +1,8 @@
 import UIKit
 
 protocol ThumbnailTableViewCellDelegate {
-    func onDefaultButtonTap(cell: ThumbnailTableViewCell)
+    func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell)
+    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell)
 }
 
 class ThumbnailTableViewCell: UITableViewCell {
@@ -27,11 +28,12 @@ class ThumbnailTableViewCell: UITableViewCell {
     
     @IBAction func defaultThumbnailButtonAction(_ sender: UIButton) {
         print("🟢 defaultThumbnailButton Did Tap")
-        delegate?.onDefaultButtonTap(cell: self)
+        delegate?.onDefaultThumbnailButtonTap(cell: self)
     }
     
     @IBAction func randomThumbnailButtonAction(_ sender: UIButton) {
         print("🟢 randomThumbnailButton Did Tap")
+        delegate?.onRandomThumbnailButtonTap(cell: self)
     }
     
     func fillCell(with video: Video) {
@@ -41,6 +43,4 @@ class ThumbnailTableViewCell: UITableViewCell {
             titleLabel.text = "Noname video:"
         }
     }
-    
-    
 }

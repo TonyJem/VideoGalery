@@ -62,8 +62,14 @@ extension ThumbnailViewController: UITableViewDelegate {
 
 // MARK: - ThumbnailTableViewCell Delegate
 extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
-    func onDefaultButtonTap(cell: ThumbnailTableViewCell) {
+    
+    func onRandomThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        print("🟢🟢 onDefaultButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
+        print("🟢🟢 onRandomThumbnailButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
+    }
+    
+    func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        print("🟢🟢 onDefaultThumbnailButtonTap Did Tap on Cell Title: \(videos[indexPath.row].title)")
     }
 }
