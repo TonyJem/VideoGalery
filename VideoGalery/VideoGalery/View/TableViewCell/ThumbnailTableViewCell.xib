@@ -22,6 +22,9 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video1" translatesAutoresizingMaskIntoConstraints="NO" id="lCV-s7-ARi">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="2nK-hf-jcU"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
