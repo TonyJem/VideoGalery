@@ -40,7 +40,7 @@ extension ThumbnailViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
             return UITableViewCell()
         }
-        cell.fillCell(with: videos[indexPath.row].videoImage)
+        cell.fillCell(with: videos[indexPath.row])
         return cell
     }
 }
