@@ -66,17 +66,13 @@ extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
     func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         videos[indexPath.row].setThumbnailToDefault()
-        
-        // TODO: Reload only selected cell
-        tableView.reloadData()
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     func onGeneratedThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         videos[indexPath.row].setGeneratedThumbnail()
         print("🟢 Generate Thumbnail from URL for cell: \(videos[indexPath.row].title) ...")
-        
-        // TODO: Reload only selected cell
-        tableView.reloadData()
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
