@@ -1,5 +1,5 @@
-
 import UIKit
+import AVKit
 
 final class ThumbnailViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
@@ -42,4 +42,14 @@ extension ThumbnailViewController: UITableViewDataSource {
 
 // MARK: - TableView Delegate
 extension ThumbnailViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedVideo = videos[indexPath.row]
+        let player = AVPlayer(url: selectedVideo.videoUrl)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        playerViewController.allowsPictureInPicturePlayback = true
+        playerViewController.player?.play()
+        
+        present(playerViewController, animated: true, completion: nil)
+    }
 }
