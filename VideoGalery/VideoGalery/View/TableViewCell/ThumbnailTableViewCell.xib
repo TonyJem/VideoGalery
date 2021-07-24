@@ -48,7 +48,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="video1" width="334" height="206"/>
+        <image name="video1" width="1351" height="916"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
