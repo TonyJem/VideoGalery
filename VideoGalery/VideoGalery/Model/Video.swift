@@ -2,9 +2,19 @@ import UIKit
 
 struct Video {
     
-    let image: UIImage
     let title: String
     let url: URL
+    
+    private let defaultImage: UIImage
+    
+    private var randomThumbnail: UIImage? = nil
+    
+    var thumbnail: UIImage {
+        guard let thumbnail = randomThumbnail else {
+            return defaultImage
+        }
+        return thumbnail
+    }
     
     private enum Title: String {
         case title01 = "Aladdin"
@@ -34,16 +44,16 @@ struct Video {
     }
     
     static func fetchVideos() -> [Video] {
-        let video01 = Video(image: #imageLiteral(resourceName: "video01"), title: Title.title01.rawValue, url: URL(string: Url.url01.rawValue)!)
-        let video02 = Video(image: #imageLiteral(resourceName: "video02"), title: Title.title02.rawValue, url: URL(string: Url.url02.rawValue)!)
-        let video03 = Video(image: #imageLiteral(resourceName: "video03"), title: Title.title03.rawValue, url: URL(string: Url.url03.rawValue)!)
-        let video04 = Video(image: #imageLiteral(resourceName: "video04"), title: Title.title04.rawValue, url: URL(string: Url.url04.rawValue)!)
-        let video05 = Video(image: #imageLiteral(resourceName: "video05"), title: Title.title05.rawValue, url: URL(string: Url.url05.rawValue)!)
-        let video06 = Video(image: #imageLiteral(resourceName: "video06"), title: Title.title06.rawValue, url: URL(string: Url.url06.rawValue)!)
-        let video07 = Video(image: #imageLiteral(resourceName: "video07"), title: Title.title07.rawValue, url: URL(string: Url.url07.rawValue)!)
-        let video08 = Video(image: #imageLiteral(resourceName: "video08"), title: Title.title08.rawValue, url: URL(string: Url.url08.rawValue)!)
-        let video09 = Video(image: #imageLiteral(resourceName: "video09"), title: Title.title09.rawValue, url: URL(string: Url.url09.rawValue)!)
-        let video10 = Video(image: #imageLiteral(resourceName: "video10"), title: Title.title10.rawValue, url: URL(string: Url.url10.rawValue)!)
+        let video01 = Video(title: Title.title01.rawValue, url: URL(string: Url.url01.rawValue)!, defaultImage: #imageLiteral(resourceName: "video01"))
+        let video02 = Video(title: Title.title02.rawValue, url: URL(string: Url.url02.rawValue)!, defaultImage: #imageLiteral(resourceName: "video02"))
+        let video03 = Video(title: Title.title03.rawValue, url: URL(string: Url.url03.rawValue)!, defaultImage: #imageLiteral(resourceName: "video03"))
+        let video04 = Video(title: Title.title04.rawValue, url: URL(string: Url.url04.rawValue)!, defaultImage: #imageLiteral(resourceName: "video04"))
+        let video05 = Video(title: Title.title05.rawValue, url: URL(string: Url.url05.rawValue)!, defaultImage: #imageLiteral(resourceName: "video05"))
+        let video06 = Video(title: Title.title06.rawValue, url: URL(string: Url.url06.rawValue)!, defaultImage: #imageLiteral(resourceName: "video06"))
+        let video07 = Video(title: Title.title07.rawValue, url: URL(string: Url.url07.rawValue)!, defaultImage: #imageLiteral(resourceName: "video07"))
+        let video08 = Video(title: Title.title08.rawValue, url: URL(string: Url.url08.rawValue)!, defaultImage: #imageLiteral(resourceName: "video08"))
+        let video09 = Video(title: Title.title09.rawValue, url: URL(string: Url.url09.rawValue)!, defaultImage: #imageLiteral(resourceName: "video09"))
+        let video10 = Video(title: Title.title10.rawValue, url: URL(string: Url.url10.rawValue)!, defaultImage: #imageLiteral(resourceName: "video10"))
         
         return [video01, video02, video03, video04, video05, video06, video07, video08, video09, video10]
     }

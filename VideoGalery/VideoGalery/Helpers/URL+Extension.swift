@@ -12,7 +12,7 @@ extension URL {
         } catch let error {
             print("🔴 \(error)")
         }
-        
+//        TODO: Here return nil, and cell should show default if nil
         return #imageLiteral(resourceName: "videoDefault")
     }
 }
