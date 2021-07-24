@@ -7,7 +7,8 @@ final class ThumbnailViewController: UIViewController {
     lazy var videos: [Video] = {
         return Video.fetchVideos()
     }()
-    
+  
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +21,13 @@ final class ThumbnailViewController: UIViewController {
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        guard let selectedIndexPath = tableView.indexPathForSelectedRow else { return }
+        tableView.deselectRow(at: selectedIndexPath, animated: animated)
     }
 }
 
