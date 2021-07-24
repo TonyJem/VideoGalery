@@ -11,6 +11,7 @@ struct Video {
     case videoTitleTwo = "Avez Vous"
     case videoTitleThree = "The Kings Trumpet"
     case videoTitleFour = "Popeye the Sailor Meets Aladdin and His Wonderful Lamp"
+    case videoTitleFive = "The Barber of Seville"
   }
  
   private enum VideoUrl: String {
@@ -18,6 +19,13 @@ struct Video {
     case videoTwo = "https://ia800604.us.archive.org/19/items/Avez-vousDjVu...LePlusPetitZooDuMonde/104_Le_Plus_Petit_Zoo_du_Monde.mp4"
     case videoThree = "https://ia800705.us.archive.org/28/items/TheSpiritOf43_56/The_Spirit_of__43_512kb.mp4"
     case videoFour = "https://ia800703.us.archive.org/30/items/Popeye_the_Sailor_Meets_Aladdin_and_His_Wonderful_Lamp/Popeye_-_Aladdin_and_His_Wonderful_Lamp_512kb.mp4"
+    case videoFive = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+//    case videoSix = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+//    case videoSeven = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+//    case videoEight = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+//    case videoNine = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+//    case videoTen = "https://ia800204.us.archive.org/13/items/TheBarberOfSeville/TheBarberOfSeville1944.mp4"
+    
   }
  
   static func fetchVideos() -> [Video]{
@@ -25,7 +33,8 @@ struct Video {
     let v2 = Video(image:  #imageLiteral(resourceName: "video2"), title: VideoTitle.videoTitleTwo.rawValue, url: URL(string: VideoUrl.videoTwo.rawValue)!)
     let v3 = Video(image:  #imageLiteral(resourceName: "video3"), title: VideoTitle.videoTitleThree.rawValue, url: URL(string: VideoUrl.videoThree.rawValue)!)
     let v4 = Video(image:  #imageLiteral(resourceName: "video4"), title: VideoTitle.videoTitleFour.rawValue, url: URL(string: VideoUrl.videoFour.rawValue)!)
+    let v5 = Video(image:  #imageLiteral(resourceName: "video5"), title: VideoTitle.videoTitleFive.rawValue, url: URL(string: VideoUrl.videoFive.rawValue)!)
  
-    return [v1, v2, v3, v4]
+    return [v1, v2, v3, v4, v5]
   }
 }
