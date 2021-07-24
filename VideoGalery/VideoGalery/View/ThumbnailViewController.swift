@@ -16,7 +16,7 @@ final class ThumbnailViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
                                   forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
         
-        tableView.backgroundColor = .systemGray5
+        tableView.backgroundColor = Colors.mainBackround
         tableView.tableFooterView = UIView()
         tableView.dataSource = self
         tableView.delegate = self

@@ -1,20 +1,19 @@
 import UIKit
 
 class ThumbnailTableViewCell: UITableViewCell {
-    @IBOutlet private weak var thunmbnailImageView: UIImageView!
+    @IBOutlet private weak var containerView: UIView!
+    @IBOutlet private weak var thumbnailImageView: UIImageView!
+    
+    private let containerCornerRadius: CGFloat = 10
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        self.backgroundColor = Colors.mainBackround
+        containerView.layer.cornerRadius = containerCornerRadius
     }
     
     func fillCell(with image: UIImage) {
-        thunmbnailImageView.image = image
+        thumbnailImageView.image = image
     }
 }
