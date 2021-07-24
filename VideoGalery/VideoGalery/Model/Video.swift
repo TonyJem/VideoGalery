@@ -2,9 +2,9 @@ import UIKit
 
 struct Video {
     
-    let image: UIImage!
-    let title: String!
-    let url: URL!
+    let image: UIImage
+    let title: String
+    let url: URL
     
     private enum Title: String {
         case title01 = "Aladdin"

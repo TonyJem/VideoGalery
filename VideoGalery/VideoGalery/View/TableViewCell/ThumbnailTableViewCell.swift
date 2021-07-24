@@ -16,11 +16,9 @@ class ThumbnailTableViewCell: UITableViewCell {
     
     func fillCell(with video: Video) {
         thumbnailImageView.image = video.image
-        
-        if let title = video.title {
-            titleLabel.text = "\(title):"
-        } else {
-            titleLabel.text = "Unamed Video:"
+        titleLabel.text = "\(video.title):"
+        if video.title.isEmpty {
+            titleLabel.text = "Noname video"
         }
     }
 }
