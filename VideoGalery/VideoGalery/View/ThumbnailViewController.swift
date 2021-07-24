@@ -2,7 +2,7 @@
 import UIKit
 
 final class ThumbnailViewController: UIViewController {
-    @IBOutlet private weak var thumbnailsTableView: UITableView!
+    @IBOutlet private weak var tableView: UITableView!
     
     private let videoThumbnailNames = ["video1", "video2", "video3", "video4"]
     
@@ -11,13 +11,13 @@ final class ThumbnailViewController: UIViewController {
         
         title = "Funny videos"
         
-        thumbnailsTableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
+        tableView.register(UINib(nibName: String(describing: ThumbnailTableViewCell.self), bundle: Bundle.main),
                                   forCellReuseIdentifier: String(describing: ThumbnailTableViewCell.self))
         
-        thumbnailsTableView.backgroundColor = .systemGray5
-        thumbnailsTableView.tableFooterView = UIView()
-        thumbnailsTableView.dataSource = self
-        thumbnailsTableView.delegate = self
+        tableView.backgroundColor = .systemGray5
+        tableView.tableFooterView = UIView()
+        tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
@@ -29,7 +29,7 @@ extension ThumbnailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = thumbnailsTableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ThumbnailTableViewCell.self), for: indexPath) as? ThumbnailTableViewCell else {
             return UITableViewCell()
         }
         cell.fillCell(with: showImage(videoThumbnailNames[indexPath.row]))
