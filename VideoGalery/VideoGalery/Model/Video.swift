@@ -1,3 +1,4 @@
+/*
 import UIKit
 import AVFoundation
 
@@ -79,3 +80,4 @@ struct Video {
         return #imageLiteral(resourceName: "videoDefault")
     }
 }
+*/
