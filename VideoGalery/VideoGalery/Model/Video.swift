@@ -6,9 +6,9 @@ struct Video {
     let title: String
     let url: URL
     
-    var generatedThumbnail: UIImage? = nil
-    
     private let defaultImage: UIImage
+    
+    private var generatedThumbnail: UIImage? = nil
     
     var thumbnail: UIImage {
         guard let thumbnail = generatedThumbnail else {
