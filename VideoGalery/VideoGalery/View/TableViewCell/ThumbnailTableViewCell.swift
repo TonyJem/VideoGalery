@@ -34,7 +34,7 @@ class ThumbnailTableViewCell: UITableViewCell {
         delegate?.onGeneratedThumbnailButtonTap(cell: self)
     }
     
-    func fillCell(with video: Video) {
+    func fillCell(with video: MvvmModel.Video) {
         thumbnailImageView.image = video.thumbnail
         titleLabel.text = "\(video.title):"
         if video.title.isEmpty {
