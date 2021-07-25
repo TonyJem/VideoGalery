@@ -4,6 +4,10 @@ import AVKit
 final class ThumbnailViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
     
+    private lazy var videos: [Video] = {
+        return Video.fetchVideos()
+    }()
+    
     var viewModel: ViewModelProtocol!
     
     // MARK: - LifeCycle
@@ -33,7 +37,7 @@ final class ThumbnailViewController: UIViewController {
 // MARK: - TableView DataSource
 extension ThumbnailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.videos.count
+        return videos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,7 +45,7 @@ extension ThumbnailViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         cell.delegate = self
-        cell.fillCell(with: viewModel.videos[indexPath.row])
+        cell.fillCell(with: videos[indexPath.row])
         return cell
     }
 }
@@ -49,7 +53,7 @@ extension ThumbnailViewController: UITableViewDataSource {
 // MARK: - TableView Delegate
 extension ThumbnailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedVideo = viewModel.videos[indexPath.row]
+        let selectedVideo = videos[indexPath.row]
         let player = AVPlayer(url: selectedVideo.url)
         let playerViewController = AVPlayerViewController()
         playerViewController.player = player
@@ -66,15 +70,16 @@ extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
     func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
         
-        viewModel.showDefaultThumbnail(for: indexPath.row)
+        viewModel.showDefaultThumbnail()
+        
+        videos[indexPath.row].setThumbnailToDefault()
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     func onGeneratedThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
-        
-        viewModel.showGeneratedThumbnail(for: indexPath.row)
-        print("🟢 Generate Thumbnail from URL for cell: \(viewModel.videos[indexPath.row].title) ...")
+        videos[indexPath.row].setGeneratedThumbnail()
+        print("🟢 Generate Thumbnail from URL for cell: \(videos[indexPath.row].title) ...")
         tableView.reloadRows(at: [indexPath], with: .none)
     }
 }
