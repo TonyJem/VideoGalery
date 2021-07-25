@@ -13,14 +13,14 @@ class ViewModel: ViewModelProtocol {
     var videos: [MvvmModel.Video] =  MvvmModel.Video.fetchVideos()
 
     func showDefaultThumbnail(for index: Int) {
-        var video = videos[index]
-        video.setThumbnailToDefault()
+        let video = videos[index]
+        
         updateView?(.initial(MvvmModel.Video(title: video.title, url: video.url, defaultImage: video.defaultImage)))
     }
     
     func showGeneratedThumbnail(for index: Int) {
-        var video = videos[index]
-        video.setGeneratedThumbnail()
+        let video = videos[index]
+        
         updateView?(.generated(MvvmModel.Video(title: video.title, url: video.url, defaultImage: video.defaultImage)))
     }
 }
