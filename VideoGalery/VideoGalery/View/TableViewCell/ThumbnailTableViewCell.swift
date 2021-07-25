@@ -28,10 +28,22 @@ class ThumbnailTableViewCell: UITableViewCell {
     
     @IBAction func defaultThumbnailButtonAction(_ sender: UIButton) {
         delegate?.onDefaultThumbnailButtonTap(cell: self)
+        
+        defaultThumbnailButton.backgroundColor = .systemBlue
+        defaultThumbnailButton.tintColor = .white
+        
+        generatedThumbnailButton.backgroundColor = .clear
+        generatedThumbnailButton.tintColor = .systemBlue
     }
     
     @IBAction func generatedThumbnailButtonAction(_ sender: UIButton) {
         delegate?.onGeneratedThumbnailButtonTap(cell: self)
+        
+        defaultThumbnailButton.backgroundColor = .clear
+        defaultThumbnailButton.tintColor = .systemBlue
+        
+        generatedThumbnailButton.backgroundColor = .systemBlue
+        generatedThumbnailButton.tintColor = .white
     }
     
     func fillCell(with video: Video) {
