@@ -8,9 +8,13 @@ final class ThumbnailViewController: UIViewController {
         return Video.fetchVideos()
     }()
     
+    var viewModel: ViewModelProtocol!
+    
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewModel = ViewModel()
         
         title = "Funny videos"
         
@@ -65,6 +69,9 @@ extension ThumbnailViewController: ThumbnailTableViewCellDelegate {
     
     func onDefaultThumbnailButtonTap(cell: ThumbnailTableViewCell) {
         guard let indexPath = tableView.indexPath(for: cell) else { return }
+        
+        viewModel.showDefaultThumbnail()
+        
         videos[indexPath.row].setThumbnailToDefault()
         tableView.reloadRows(at: [indexPath], with: .none)
     }
