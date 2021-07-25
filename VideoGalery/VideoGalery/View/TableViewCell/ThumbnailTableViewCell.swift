@@ -12,6 +12,7 @@ class ThumbnailTableViewCell: UITableViewCell {
     @IBOutlet private weak var defaultThumbnailButton: UIButton!
     @IBOutlet private weak var generatedThumbnailButton: UIButton!
     
+    var video: Video?
     var delegate: ThumbnailTableViewCellDelegate?
     
     private let containerCornerRadius: CGFloat = 10
@@ -46,7 +47,8 @@ class ThumbnailTableViewCell: UITableViewCell {
         generatedThumbnailButton.tintColor = .white
     }
     
-    func fillCell(with video: Video) {
+    func fillCell() {
+        guard let video = self.video else { return }
         thumbnailImageView.image = video.thumbnail
         titleLabel.text = "\(video.title):"
         if video.title.isEmpty {
